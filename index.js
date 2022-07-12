@@ -1,3 +1,4 @@
+const results = require('./data/swapi');
 const characters = require('./data/swapi');
 // DO NOT CHANGE THE LINE ABOVE
 
@@ -34,7 +35,18 @@ const characters = require('./data/swapi');
  *
  */
 
-function listAllCharacters() {}
+function listAllCharacters(characters) {
+// let array = [];
+
+// if(!characters.length){
+//   return 0
+// }
+
+// for (let i = 0; i < characters.length; i++) {
+//   array.push(characters[i].name)
+// }
+// return array
+}
 
 //UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION
 // console.log(listAllCharacters([]));
@@ -51,10 +63,17 @@ function listAllCharacters() {}
  * No example for this one. You should be able to find the average at this point
  */
 
-function averageHeightOfAllCharacters() {}
+function averageHeightOfAllCharacters(characters) {
+// let avg = 0;
+
+// for (let i = 0; i < characters.length; i++) {
+//   avg += (characters[i].height / characters.length)
+// }
+// return avg.toFixed(0)
+}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
-//console.log(averageHeightOfAllCharacters(characters))
+// console.log(averageHeightOfAllCharacters(characters))
 
 /**
  * countByEyeColor()
@@ -76,7 +95,23 @@ function averageHeightOfAllCharacters() {}
  *
  */
 
-function countByEyeColor() {}
+function countByEyeColor(characters) {
+  // let object = {};
+  // if(!characters.length){
+  //   return 'Nothing to check.'
+  // }
+
+  // for (let i = 0; i < characters.length; i++) {
+  //   if (!object[characters[i].eye_color]){
+  //     object[characters[i].eye_color] = 1
+  //   } else {
+  //     if (object[characters[i].eye_color]){
+  //       object[characters[i].eye_color] += 1
+  //     }
+  //   }
+  // }
+  // return object
+}
 
 //UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION
 // console.log(countByEyeColor([]))
@@ -106,7 +141,17 @@ function countByEyeColor() {}
  *
  */
 
-function getAllCharactersCreatedAfterYear() {}
+function getAllCharactersCreatedAfterYear(characters, date) {
+  // let array = [];
+
+  // for (let i = 0; i < characters.length; i++) {
+  //   let createdDate = characters[i].created.slice(0,4)
+  //   if (createdDate >= date){
+  //     array.push(characters[i].name)
+  //   }
+  // }
+  // return array
+}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
 // console.log(getAllCharactersCreatedAfterYear(characters, 2014));
@@ -115,7 +160,7 @@ function getAllCharactersCreatedAfterYear() {}
  *  ----------------------
  *  Returns an object of characters who were in a certain film. 
  *  Their id will be the key and their name should be the value. 
- *  Title should be CASE INCENSITIVE meaning, 
+ *  Title should be CASE INSENSITIVE meaning, 
  *  if the string argument is e.g. 'star wars' or 'STAR WARS' or 'STaR wArs' 
  *  and there is a film called 'Star Wars' in the character's data, 
  *  the character was in the film and should be returned.
@@ -138,7 +183,17 @@ function getAllCharactersCreatedAfterYear() {}
    }
  */
 
-function getCharactersInMovie() {}
+function getCharactersInMovie(characters, title) {
+  // let obj = {}
+
+  // for (let i = 0; i < characters.length; i++) {
+  //   for (let j = 0; j < characters[i].films.length; j++) {
+  //     if (characters[i].films.includes(title))
+  //     obj[characters[i].id] = characters[i].name
+  //   }
+  // }
+  // return obj
+}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
 // console.log(getCharactersInMovie(characters, 'return of the jedi'));
