@@ -36,21 +36,21 @@ const characters = require('./data/swapi');
  */
 
 function listAllCharacters(characters) {
-// let array = [];
+let array = [];
 
-// if(!characters.length){
-//   return 0
-// }
+if(!characters.length){
+  return 0
+}
 
-// for (let i = 0; i < characters.length; i++) {
-//   array.push(characters[i].name)
-// }
-// return array
+for (let i = 0; i < characters.length; i++) {
+  array.push(characters[i].name)
+}
+return array
 }
 
 //UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION
-// console.log(listAllCharacters([]));
-// console.log(listAllCharacters(characters));
+console.log(listAllCharacters([]));
+console.log(listAllCharacters(characters));
 
 /**
  * averageHeightOfAllCharacters()
@@ -64,16 +64,16 @@ function listAllCharacters(characters) {
  */
 
 function averageHeightOfAllCharacters(characters) {
-// let avg = 0;
+let avg = 0;
 
-// for (let i = 0; i < characters.length; i++) {
-//   avg += (characters[i].height / characters.length)
-// }
-// return avg.toFixed(0)
+for (let i = 0; i < characters.length; i++) {
+  avg += (characters[i].height / characters.length)
+}
+return avg.toFixed(0)
 }
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
-// console.log(averageHeightOfAllCharacters(characters))
+console.log(averageHeightOfAllCharacters(characters))
 
 /**
  * countByEyeColor()
@@ -96,26 +96,26 @@ function averageHeightOfAllCharacters(characters) {
  */
 
 function countByEyeColor(characters) {
-  // let object = {};
-  // if(!characters.length){
-  //   return 'Nothing to check.'
-  // }
+  let object = {};
+  if(!characters.length){
+    return 'Nothing to check.'
+  }
 
-  // for (let i = 0; i < characters.length; i++) {
-  //   if (!object[characters[i].eye_color]){
-  //     object[characters[i].eye_color] = 1
-  //   } else {
-  //     if (object[characters[i].eye_color]){
-  //       object[characters[i].eye_color] += 1
-  //     }
-  //   }
-  // }
-  // return object
+  for (let i = 0; i < characters.length; i++) {
+    if (!object[characters[i].eye_color]){
+      object[characters[i].eye_color] = 1
+    } else {
+      if (object[characters[i].eye_color]){
+        object[characters[i].eye_color] += 1
+      }
+    }
+  }
+  return object
 }
 
 //UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION
-// console.log(countByEyeColor([]))
-// console.log(countByEyeColor(characters));
+console.log(countByEyeColor([]))
+console.log(countByEyeColor(characters));
 
 /**
  * getAllCharactersCreatedAfterYear()
@@ -142,19 +142,19 @@ function countByEyeColor(characters) {
  */
 
 function getAllCharactersCreatedAfterYear(characters, date) {
-  // let array = [];
+  let array = [];
 
-  // for (let i = 0; i < characters.length; i++) {
-  //   let createdDate = characters[i].created.slice(0,4)
-  //   if (createdDate >= date){
-  //     array.push(characters[i].name)
-  //   }
-  // }
-  // return array
+  for (let i = 0; i < characters.length; i++) {
+    let createdDate = characters[i].created.slice(0,4)
+    if (createdDate >= date){
+      array.push(characters[i].name)
+    }
+  }
+  return array
 }
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
-// console.log(getAllCharactersCreatedAfterYear(characters, 2014));
+console.log(getAllCharactersCreatedAfterYear(characters, 2014));
 
 /** getCharactersInMovie()
  *  ----------------------
@@ -184,16 +184,20 @@ function getAllCharactersCreatedAfterYear(characters, date) {
  */
 
 function getCharactersInMovie(characters, title) {
-  // let obj = {}
+  let obj = {};
+  let movie;
 
-  // for (let i = 0; i < characters.length; i++) {
-  //   for (let j = 0; j < characters[i].films.length; j++) {
-  //     if (characters[i].films.includes(title))
-  //     obj[characters[i].id] = characters[i].name
-  //   }
-  // }
-  // return obj
+  for (let i = 0; i < characters.length; i++) {
+    movie = characters[i].films
+    for (let j = 0; j < characters[i].films.length; j++) {
+      let lowerCase = characters[i].films[j].toLowerCase()
+      if (lowerCase === title.toLowerCase()){
+        obj[characters[i].id] = characters[i].name
+      }
+    }
+  }
+  return obj
 }
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
-// console.log(getCharactersInMovie(characters, 'return of the jedi'));
+console.log(getCharactersInMovie(characters, 'return of the jedi'));
